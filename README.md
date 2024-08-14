@@ -80,17 +80,17 @@ cd auto-app/app
 project_accession = "ここに解析したいプロジェクト番号を指定する"
 
 # シークエンスデータをダウンロードするディレクトリパスを指定
-base_directory = "/自分の環境の絶対パスを入力/app/data/row_data"
+base_directory = "/自分の環境の絶対パスを入力/auto-app/data/row_data"
 
 # Nextflowのパスを指定
-nextflow_path = "/自分の環境の絶対パスを入力/app/nextflow"
+nextflow_path = "/自分の環境の絶対パスを入力/auto-app/nextflow"
 
 # nextflow_conf内の設定ファイルを指定
-nextflow_merge_script = "/自分の環境の絶対パスを入力/app/scripts/nextflow_conf/nextflow_merge_script.nf"
-nextflow_run_script = "/自分の環境の絶対パスを入力/app/scripts/nextflow_conf/nextflow_run_script.nf"
+nextflow_merge_script = "/自分の環境の絶対パスを入力/auto-app/nextflow_conf/nextflow_merge_script.nf"
+nextflow_run_script = "/自分の環境の絶対パスを入力/auto-app/nextflow_conf/nextflow_run_script.nf"
 
 # 出力データの保存先を指定
-output_directory = "/自分の環境の絶対パスを入力/app/data/output_data"
+output_directory = "/自分の環境の絶対パスを入力/auto-app/data/output_data"
 ```
 3. python3で実行する
 ```zsh
