@@ -24,6 +24,11 @@ auto-app/<br>
 
 ※コマンドはあくまで参考にしてください。必ずそれでインストールできるとは限りません。
 
+## auto-appをダウンロード
+```zsh
+git clone https://github.com/kt-git-1/auto-app.git
+```
+
 ## Javaのインストール
 
 Nextflowの実行にはJavaが必要であるためインストールする。
@@ -45,20 +50,13 @@ Python3をインストールする。
 
 **macOS**:
 ```zh
-brew install python
+brew install python3
 ```
 
 **Ubuntu**:
 ```zh
 sudo apt update
 sudo apt install python3 python3-pip
-```
-
-## Nextflowのインストール
-**macOS/Ubuntu**:
-```zsh
-curl -s https://get.nextflow.io
-sudo mv nextflow /usr/local/bin/
 ```
 
 ## 必要なPythonパッケージのインストール
