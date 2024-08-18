@@ -63,6 +63,7 @@ sudo mv nextflow /usr/local/bin/
 
 ## 必要なPythonパッケージのインストール
 requirements.txtから必要なPythonパッケージをインストールする。
+必要であれば仮想環境を使用する。
 ```zsh
 # auto-appをクローンしたディレクトリに移動
 pip install -r requirements.txt
@@ -72,7 +73,7 @@ pip install -r requirements.txt
 1. 作業ディレクトリに移動
 ```zsh
 # 例
-cd auto-app/app
+cd auto-app
 ```
 2. 各パラメータを設定する
 ```auto.py
@@ -92,7 +93,13 @@ nextflow_run_script = "/自分の環境の絶対パスを入力/auto-app/nextflo
 # 出力データの保存先を指定
 output_directory = "/自分の環境の絶対パスを入力/auto-app/data/output_data"
 ```
-3. python3で実行する
+3. (必要であれば)仮想環境を有効にする
+```bash
+# 解析サーバー(~/media/test/WD_BLACK)では以下のコマンドで仮想環境を有効化できる
+pyenv activate auto_env
+```
+
+4. python3で実行する
 ```zsh
 python3 auto.py
 ```

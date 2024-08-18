@@ -4,16 +4,17 @@ params.input = ''
 params.output_dir = ''
 
 process analyzeFastq {   
-    publishDir path: "${params.output_dir}", mode: 'copy'
-
     input:
     path merged_file
 
     output:
     path "fastqc_output"
 
+    publishDir path: "${params.output_dir}", mode: 'copy'
+
     script:
     """
+    mkdir -p fastqc_output
     fastqc ${merged_file} -o fastqc_output
     """
 }

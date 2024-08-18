@@ -5,12 +5,12 @@ from urllib.parse import urlparse
 import subprocess
 
 # 各パラメータを設定
-project_accession = "PRJEB19970"
-base_directory = "/Volumes/WD_BLACK/auto-app/data/row_data"
-nextflow_path = "/Volumes/WD_BLACK/auto-app/nextflow"
-nextflow_merge_script = "/Volumes/WD_BLACK/auto-app/nextflow_conf/nextflow_merge_script.nf"
-nextflow_run_script = "/Volumes/WD_BLACK/auto-app/nextflow_conf/nextflow_run_script.nf"
-output_directory = "/Volumes/WD_BLACK/auto-app/data/output_data"
+project_accession = "プロジェクト番号"
+base_directory = "/Your Absolute Path/auto-app/data/row_data"
+nextflow_path = "/Your Absolute Path/auto-app/nextflow"
+nextflow_merge_script = "/Your Absolute Path/auto-app/nextflow_conf/nextflow_merge_script.nf"
+nextflow_run_script = "/Your Absolute Path/auto-app/nextflow_conf/nextflow_run_script.nf"
+output_directory = "/Your Absolute Path/auto-app/data/output_data"
 
 # ENAのAPIにアクセスして入力したプロジェクトの情報取得
 def get_api_response(project_accession):
@@ -72,7 +72,7 @@ for sample_acc, ftp_urls in sample_to_ftp_urls.items():
 
     if gz_files:
         # Nextflowを使用してマージ
-        merged_fastq = os.path.join(sample_dir, f"{sample_acc}_merged.fastq.gz")
+        merged_fastq = os.path.join(sample_dir, "merged.fastq.gz")
         print(f"Merging files in {sample_dir} to create {merged_fastq}\n")
         try:
             subprocess.run([nextflow_path, "run", nextflow_merge_script, "--input_dir", sample_dir, "--output_file", merged_fastq], check=True)
