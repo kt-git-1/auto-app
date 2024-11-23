@@ -12,6 +12,12 @@ nextflow_merge_script = "/Your Absolute Path/auto-app/nextflow_conf/nextflow_mer
 nextflow_run_script = "/Your Absolute Path/auto-app/nextflow_conf/nextflow_run_script.nf"
 output_directory = "/Your Absolute Path/auto-app/data/output_data"
 
+# プロジェクト番号ごとのディレクトリを作成
+project_base_dir = os.path.join(base_directory, project_accession)
+project_output_dir = os.path.join(output_directory, project_accession)
+os.makedirs(project_base_dir, exist_ok=True)
+os.makedirs(project_output_dir, exist_ok=True)
+
 # ENAのAPIにアクセスして入力したプロジェクトの情報取得
 def get_api_response(project_accession):
     url = f"https://www.ebi.ac.uk/ena/portal/api/filereport?accession={project_accession}&result=read_run&fields=sample_accession,submitted_ftp&format=tsv"
